@@ -1,0 +1,11 @@
+---
+pagination:
+    data: photos.vsjdlqy.media
+    size: 2
+---
+<h2>bruh moment</h2>
+asdfsd
+{% for pic in pagination.items -%}
+    <p>{{ pic.photographer }}</p>
+    <img src={{ pic.src.original }} alt={{ pic.alt }}>
+{% endfor -%}
