@@ -9,8 +9,11 @@ title: Home
     Navigation tag
 </nav>
 <ul>
+
     {% for picture in photos.vsjdlqy.media -%}
-    <img src = "{{picture.src.tiny}}">
+    <a href="photos/img-{{picture.id}}/index.html">
+        <img src = "{{picture.src.tiny}}">
+    </a>
     {% endfor -%}
 </ul>
 <footer>

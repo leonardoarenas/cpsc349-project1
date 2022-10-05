@@ -1,11 +1,33 @@
 ---
 pagination:
     data: photos.vsjdlqy.media
-    size: 2
+    size: 1
+    alias: photo
+permalink: "photos/img-{{photo.id}}/index.html"
 ---
-<h2>bruh moment</h2>
-asdfsd
-{% for pic in pagination.items -%}
-    <p>{{ pic.photographer }}</p>
-    <img src={{ pic.src.original }} alt={{ pic.alt }}>
-{% endfor -%}
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+<main >
+    {% for pic in pagination.items -%}
+    <header>
+        <h1>{{ pic.alt }}</h1>
+        <h2>By: {{ pic.photographer }}</h2>
+    </header>
+    <article>
+        <figure>
+            <img src="{{ pic.src.original }}" alt="{{ pic.alt }}">
+            <figcaption>
+                <p>{{ pic.alt }}</p>
+            </figcaption>
+        </figure>
+        <hr>
+        <a href="/">
+            <button style="background-color: {{ pic.avg_color }};">Go Home</button>
+        </a>
+    </article>
+    <footer>
+        <p>More information about {{ pic.photographer }} can be found <a href={{ pic.photographer_url }} target="_blank">here</a>!</p>
+    </footer>
+    {% endfor -%}
+</main>
