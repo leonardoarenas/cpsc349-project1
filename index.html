@@ -11,7 +11,7 @@ title: Outer Space
             <a href="/">Home</a>
         </li>
         <li>
-            <a href="#">About Us</a>
+            <a href="/about">About Us</a>
         </li>
     </ul>
 </nav>
@@ -22,7 +22,7 @@ title: Outer Space
 
     {% for picture in photos.vsjdlqy.media -%}
     <a href="photos/img-{{picture.id}}/index.html">
-        <img src = "{{picture.src.tiny}}">
+        <img src = "{{picture.src.tiny}}" alt="{{picture.alt}}">
     </a>
     {% endfor -%}
 </ul>
