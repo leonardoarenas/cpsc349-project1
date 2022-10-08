@@ -4,8 +4,8 @@
   "type": "module",
   "description": "CPSC 349 - Fall 2022 - Project 1",
   "scripts": {
-    "start": "rm -rf ./docs/ && npx @11ty/eleventy && cp -r ./_site/ ./docs/ && rm -rf _site/docs &&  npx @11ty/eleventy --serve --config=.eleventy.cjs",
-    "test": "vnu --skip-non-html --Werror _site/"
+    "start": "npx @11ty/eleventy --serve --config=.eleventy.cjs",
+    "test": "vnu --skip-non-html --Werror docs/"
   },
   "repository": {
     "type": "git",
