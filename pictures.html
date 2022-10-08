@@ -4,40 +4,32 @@ pagination:
     size: 1
     alias: photo
 permalink: "photos/img-{{photo.id}}/index.html"
+layout: base 
+title: Photo Details
 ---
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-</head>
-<main >
-    {% for pic in pagination.items -%}
-    <header>
-        <h1>{{ pic.alt }}</h1>
-        <h2>By: {{ pic.photographer }}</h2>
-    </header>
-    <nav>
+{% for pic in pagination.items -%}
+<header>
+    <nav style="background-color: {{ pic.avg_color }};">
         <ul>
             <li>
                 <a href="/">Home</a>
             </li>
             <li>
-                <a href="#">About Us</a>
+                <a href="/about">About Us</a>
             </li>
         </ul>
     </nav>
-    <article>
-        <figure>
-            <img src="{{ pic.src.original }}" alt="{{ pic.alt }}">
-            <figcaption>
-                <p>{{ pic.alt }}</p>
-            </figcaption>
-        </figure>
-        <hr>
-        <a href="/">
-            <button style="background-color: {{ pic.avg_color }};">Go Home</button>
-        </a>
-    </article>
-    <footer>
-        <p>More information about {{ pic.photographer }} can be found <a href={{ pic.photographer_url }} target="_blank">here</a>!</p>
-    </footer>
-    {% endfor -%}
+    <h1>{{ pic.alt }}</h1>
+    <h2>By: {{ pic.photographer }}</h2>
+</header>
+<main >
+    <figure style="background-color: {{ pic.avg_color }};">
+        <img src="{{ pic.src.original }}" alt="{{ pic.alt }}">
+        <figcaption>
+            <p>{{ pic.alt }}</p>
+        </figcaption>
+    </figure>
+    <br>
+    <p>More information about {{ pic.photographer }} can be found <a href={{ pic.photographer_url }} target="_blank">here</a>!</p>
 </main>
+{% endfor -%}
