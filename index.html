@@ -4,33 +4,30 @@ title: Outer Space
 ---
 <header>
     <h1>{{ title }} </h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/about">About Us</a>
+            </li>
+        </ul>
+    </nav>  
 </header>
-<nav>
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about">About Us</a>
-        </li>
-    </ul>
-</nav>
-<p>
-    This website contains a collection of photos of outer space provided by Pexels API
-</p>
-<ul>
-
-    {% for picture in photos.vsjdlqy.media -%}
-    <a href="photos/img-{{picture.id}}/index.html">
-        <img src = "{{picture.src.tiny}}" alt="{{picture.alt}}">
-    </a>
-    {% endfor -%}
-</ul>
-<footer>
-    <hr>
+<main>
     <p>
-        <small>
-            <a href="https://www.pexels.com">Photos provided by Pexels</a>
-        </small>
+        This website contains a collection of photos of outer space provided by Pexels API
     </p>
-</footer>
+    <section>
+        <h3>Thumbnails</h4>
+        <hr>
+        {% for picture in photos.vsjdlqy.media -%}
+        <figure>
+            <a href="photos/img-{{picture.id}}/index.html">
+                <img src = "{{picture.src.tiny}}" alt="{{picture.alt}}">
+            </a>
+        </figure>
+        {% endfor -%}
+    </section>
+</main>
