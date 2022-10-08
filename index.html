@@ -23,11 +23,19 @@ title: Outer Space
         <h3>Thumbnails</h4>
         <hr>
         {% for picture in photos.vsjdlqy.media -%}
-        <figure>
-            <a href="photos/img-{{picture.id}}/index.html">
-                <img src = "{{picture.src.tiny}}" alt="{{picture.alt}}">
-            </a>
-        </figure>
-        {% endfor -%}
+
+    <a href="photos/img-{{picture.id}}/index.html">
+      <figure>
+        <div style="width:300px" >
+          <img src = "{{picture.src.tiny}}">
+          <figcaption>
+            <p>{{ picture.alt }}</p>
+          </figcaption>
+        </div>
+      </figure>
+  <hr>
+    </a>
+
+    {% endfor -%}
     </section>
 </main>
